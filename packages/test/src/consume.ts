@@ -29,7 +29,8 @@ const consume = async (): Promise<void> => {
           return
         }
         console.log(`consume() - consumeNAck_response=${JSON.stringify(response, null, 2)}`)
-        console.log(`consume() - consumeNAck_message=${Buffer.from(response.getMessage_asB64(),'base64').toString('ascii')}`)
+        // console.log(`consume() - consumeNAck_message=${Buffer.from(response.getMessage_asB64(),'base64').toString('ascii')}`)
+        console.log(`consume() - consumeNAck_message=${Buffer.from(response.getMessage()).toString('ascii')}`)
         console.log(`consume() - consumeNAck_message.offset=${response.getOffset()}`)
 
         const consumerAckRequest: AckRq = new AckRq()
