@@ -1,0 +1,20 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "npm run bootstrap",
+    "bootstrap": "npx lerna bootstrap",
+    "docker:kafka:start": "docker-compose -f docker-compose-kafka-com.yml up -d",
+    "docker:kafka:down": "docker-compose -f docker-compose-kafka-com.yml down",
+    "docker:kafka:stop": "docker-compose -f docker-compose-kafka-com.yml stop",
+    "docker:start": "docker-compose up -d",
+    "docker:stop": "docker-compose stop",
+    "docker:down": "docker-compose down"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
